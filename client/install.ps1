@@ -5,8 +5,8 @@ Write-Host "Installing flask-rce..."
 
 New-Item -ItemType Directory -Force -Path $installDir | Out-Null
 
-Invoke-WebRequest -Uri "https://github.com/DapperPixelguy/flask-rce/releases/latest/download/app.exe" -OutFile "$installDir\app.exe"
-Invoke-WebRequest -Uri "https://github.com/DapperPixelguy/flask-rce/releases/latest/download/config.yaml" -OutFile "$installDir\config.yaml"
+Invoke-WebRequest -Uri "https://github.com/DapperPixelguy/flask-rce/releases/download/alpha/client.exe" -OutFile "$installDir\client.exe"
+Invoke-WebRequest -Uri "https://github.com/DapperPixelguy/flask-rce/releases/download/alpha/config.yaml" -OutFile "$installDir\config.yaml"
 
 $action = New-ScheduledTaskAction -Execute "$installDir\app.exe"
 $trigger = New-ScheduledTaskTrigger -AtLogOn
