@@ -8,5 +8,5 @@ $action = New-ScheduledTaskAction -Execute "$installDir\client.exe" -WorkingDire
 $trigger = New-ScheduledTaskTrigger -AtLogOn
 $settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit 0
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -Force | Out-Null
-Start-ScheduledTask -TaskName $taskName
+Start-Process "$installDir\client.exe"
 Write-Host "Done."
